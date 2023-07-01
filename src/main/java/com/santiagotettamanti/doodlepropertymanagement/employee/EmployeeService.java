@@ -8,5 +8,19 @@ import java.util.ArrayList;
 public class EmployeeService {
     private ArrayList<Employee> employees = new ArrayList<>();
 
-    public void addEmployee
+    public boolean addEmployee(Employee employee) {
+        employees.add(employee);
+        return true;
+    }
+
+    public Employee getEmployeeById(int id) {
+        for(int i=0; i<employees.size();i++) {
+            Employee currentEmployee = employees.get(i);  //save the current employee from the loop in a variable "currentEmployee"
+            int employeeId = currentEmployee.getEmployeeId();   //find the ID of that employee with the method created in the Employee class (the getter)
+            if(employeeId==id) {                         // check if the employeeId is the same as the one provided in the parameter
+                return currentEmployee;                 // return that employee if ^ is true
+            }
+        }
+        return null;                                    // otherwise return null
+    }
 }
