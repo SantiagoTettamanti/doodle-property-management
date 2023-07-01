@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EmployeeController {
-    @GetMapping
+    @GetMapping ("/employee")
     public Employee getAllEmployees() {
         return null; //for now, you know it's coming ;D
     }
