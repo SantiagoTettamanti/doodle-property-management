@@ -4,7 +4,7 @@ import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 
-public class Rent {
+public class Rent {     //transaction?
     private int transactionNumber;
     private int paymentAmount;
     private String paymentMethod;
