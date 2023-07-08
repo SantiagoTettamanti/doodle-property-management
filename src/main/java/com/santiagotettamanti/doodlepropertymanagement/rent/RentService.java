@@ -23,4 +23,16 @@ public class RentService {
         }
         return null;
     }
+
+    public Rent deleteRentById(int id) {
+        for(int i=0; i<rents.size(); i++) {
+            Rent currentRent = rents.get(i);
+            int rentId = currentRent.getTenantId();
+            if(rentId==id) {
+                rents.remove(currentRent);
+                return currentRent;
+            }
+        }
+        return null;
+    }
 }
