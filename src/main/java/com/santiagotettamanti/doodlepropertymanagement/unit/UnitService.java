@@ -23,4 +23,16 @@ public class UnitService {
         }
         return null;
     }
+
+    public Unit deleteUnitById(int id) {
+        for(int i=0; i<units.size(); i++) {
+            Unit currentUnit = units.get(i);
+            int unitId = currentUnit.getUnitId();
+            if(unitId == id) {
+                units.remove(currentUnit);
+                return currentUnit;
+            }
+        }
+        return null;
+    }
 }

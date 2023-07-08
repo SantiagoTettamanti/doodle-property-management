@@ -23,4 +23,16 @@ public class TenantService {
         }
         return null;
     }
+
+    public Tenant deleteTenantById(int id) {
+        for(int i=0; i<tenants.size(); i++) {
+            Tenant currentTenant = tenants.get(i);
+            int tenantId = currentTenant.getTenantId();
+            if(tenantId == id) {
+                tenants.remove(currentTenant);
+                return currentTenant;
+            }
+        }
+        return null;
+    }
 }
