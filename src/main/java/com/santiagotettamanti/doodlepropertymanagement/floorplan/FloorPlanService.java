@@ -23,4 +23,13 @@ public class FloorPlanService {
         }
         return null;
     }
+
+    public FloorPlan deleteFloorPlanById(int id) {
+        for(int i=0; i<floorPlans.size(); i++) {
+            if (floorPlans.get(i).getFloorPlanId() == id) {
+                return floorPlans.remove(i);
+            }
+        }
+        return null;
+    }
 }

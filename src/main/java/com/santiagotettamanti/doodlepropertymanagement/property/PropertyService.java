@@ -24,4 +24,13 @@ public class PropertyService {
         }
         return null;
     }
+
+    public Property deletePropertyById(int id) {
+        for(int i=0; i<properties.size(); i++) {
+           if(properties.get(i).getPropertyId()==id) {
+               return properties.remove(i);
+           }
+        }
+        return null;
+    }
 }
