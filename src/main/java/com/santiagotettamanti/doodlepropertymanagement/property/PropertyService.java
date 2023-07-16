@@ -14,6 +14,10 @@ public class PropertyService {
         return true;
     }
 
+    public ArrayList<Property> getProperties() {
+        return properties;
+    }
+
     public Property getPropertyById(int id) {
         for(int i=0; i<properties.size(); i++) {
             Property currentProperty = properties.get(i);

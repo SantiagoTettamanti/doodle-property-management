@@ -13,6 +13,9 @@ public class EmployeeService {
         return true;
     }
 
+    public ArrayList<Employee> getEmployees() {
+        return employees;
+    }
     public Employee getEmployeeById(int id) {
         for(int i=0; i<employees.size();i++) {
             Employee currentEmployee = employees.get(i);        //save the current employee from the loop in a variable "currentEmployee"

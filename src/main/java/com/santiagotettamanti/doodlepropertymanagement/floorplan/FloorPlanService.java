@@ -13,6 +13,10 @@ public class FloorPlanService {
         return true;
     }
 
+    public ArrayList<FloorPlan> getFloorPlans() {
+        return floorPlans;
+    }
+
     public FloorPlan getFloorPlanById(int id) {
         for(int i=0; i<floorPlans.size(); i++) {
             FloorPlan currentFloorPlan = floorPlans.get(i);
