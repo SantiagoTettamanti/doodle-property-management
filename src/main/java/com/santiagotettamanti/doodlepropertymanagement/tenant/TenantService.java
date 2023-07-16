@@ -13,6 +13,10 @@ public class TenantService {
         return true;
     }
 
+    public ArrayList<Tenant> getTenants() {
+        return tenants;
+    }
+
     public Tenant getTenantById(int id) {
         for(int i=0; i<tenants.size(); i++) {
             Tenant currentTenant = tenants.get(i);

@@ -13,6 +13,10 @@ public class RentService {
         return true;
     }
 
+    public ArrayList<Rent> getRents() {
+        return rents;
+    }
+
     public Rent getRentById(int id) {
         for(int i=0; i<rents.size(); i++) {
             Rent currentRent = rents.get(i);

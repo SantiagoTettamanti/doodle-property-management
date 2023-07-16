@@ -2,6 +2,7 @@ package com.santiagotettamanti.doodlepropertymanagement.unit;
 
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @Service
@@ -11,6 +12,10 @@ public class UnitService {
     public boolean addUnit(Unit unit) {
         units.add(unit);
         return true;
+    }
+
+    public ArrayList<Unit> getUnits() {
+        return units;
     }
 
     public Unit getUnitById(int id) {
