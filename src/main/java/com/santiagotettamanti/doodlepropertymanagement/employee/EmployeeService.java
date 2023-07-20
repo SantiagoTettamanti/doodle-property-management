@@ -8,9 +8,10 @@ import java.util.ArrayList;
 public class EmployeeService {
     private ArrayList<Employee> employees = new ArrayList<>();
 
-    public boolean addEmployee(Employee employee) {
+    public Employee addEmployee(Employee employee) {
+        employee.setEmployeeId(employees.size() + 1);
         employees.add(employee);
-        return true;
+        return employee;
     }
 
     public ArrayList<Employee> getEmployees() {
@@ -34,5 +35,26 @@ public class EmployeeService {
             }
         }
         return null;
+    }
+
+    public Employee updateEmployee(Employee employeeChanges, int id) {
+        Employee employeeToUpdate = getEmployeeById(id);
+        String newFirstName = employeeChanges.getFirstName();
+        if (newFirstName != null) {
+            employeeToUpdate.setFirstName(newFirstName);
+        }
+        String newLastName = employeeChanges.getLastName();
+        if (newLastName != null) {
+            employeeToUpdate.setLastName(newLastName);
+        }
+        String newEmail = employeeChanges.getEmail();
+        if (newEmail != null) {
+            employeeToUpdate.setEmail(newEmail);
+        }
+        String newPhoneNumber = employeeChanges.getPhoneNumber();
+        if (newPhoneNumber != null) {
+            employeeToUpdate.setPhoneNumber(newPhoneNumber);
+        }
+        return employeeToUpdate;
     }
 }
