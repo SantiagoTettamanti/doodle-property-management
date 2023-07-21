@@ -31,6 +31,4 @@ public class EmployeeController {
         Employee updatedEmployee = employeeService.updateEmployee(employee, id);
         return updatedEmployee;
     }
-
-
 }
