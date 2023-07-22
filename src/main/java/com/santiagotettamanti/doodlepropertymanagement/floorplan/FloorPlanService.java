@@ -1,6 +1,5 @@
 package com.santiagotettamanti.doodlepropertymanagement.floorplan;
 
-import com.santiagotettamanti.doodlepropertymanagement.employee.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -40,9 +39,9 @@ public class FloorPlanService {
 
     public FloorPlan updateFloorPlan (FloorPlan floorPlanChanges, int id) {
         FloorPlan floorPlanToUpdate = getFloorPlanById(id);
-        String newFloorPlan = floorPlanChanges.getFloorPlan();
+        String newFloorPlan = floorPlanChanges.getFloorPlanName();
         if (newFloorPlan != null) {
-            floorPlanToUpdate.setFloorPlan(newFloorPlan);
+            floorPlanToUpdate.setFloorPlanName(newFloorPlan);
         }
         String newUnitType = floorPlanChanges.getUnitType();
         if (newUnitType != null) {

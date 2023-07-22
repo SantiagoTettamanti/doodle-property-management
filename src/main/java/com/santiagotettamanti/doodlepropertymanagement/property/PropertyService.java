@@ -37,4 +37,13 @@ public class PropertyService {
         }
         return null;
     }
+
+    public Property updateProperty(Property propertyChanges, int id) {
+        Property propertyToUpdate = getPropertyById(id);
+        int newNumberOfUnits = propertyChanges.getNumberOfUnits();
+        if (newNumberOfUnits != 0) {
+            propertyToUpdate.setNumberOfUnits(newNumberOfUnits);
+        }
+        return propertyToUpdate;
+    }
 }

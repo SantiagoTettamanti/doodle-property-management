@@ -1,10 +1,8 @@
-package com.santiagotettamanti.doodlepropertymanagement.rent;
-
-import org.springframework.cglib.core.Local;
+package com.santiagotettamanti.doodlepropertymanagement.transaction;
 
 import java.time.LocalDate;
 
-public class Rent {     //transaction?
+public class Transaction {     //transaction?
     private int transactionNumber;
     private int paymentAmount;
     private String paymentMethod;

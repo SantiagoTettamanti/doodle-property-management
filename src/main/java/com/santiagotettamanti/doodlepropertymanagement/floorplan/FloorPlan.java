@@ -2,8 +2,8 @@ package com.santiagotettamanti.doodlepropertymanagement.floorplan;
 
 public class FloorPlan {
     private int floorPlanId;
-    private String floorPlan;
-    private String unitType;
+    private String floorPlanName;
+    private String unitType; //ie. 1 bedroom, 2 bath
     private int squareFeet;
 
     public int getFloorPlanId() {
@@ -14,12 +14,12 @@ public class FloorPlan {
         this.floorPlanId = floorPlanId;
     }
 
-    public String getFloorPlan() {
-        return floorPlan;
+    public String getFloorPlanName() {
+        return floorPlanName;
     }
 
-    public void setFloorPlan(String floorPlan) {
-        this.floorPlan = floorPlan;
+    public void setFloorPlanName(String floorPlanName) {
+        this.floorPlanName = floorPlanName;
     }
 
     public String getUnitType() {
