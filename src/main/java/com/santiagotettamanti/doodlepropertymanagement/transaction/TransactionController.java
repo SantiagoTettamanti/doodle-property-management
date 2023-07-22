@@ -1,8 +1,7 @@
 package com.santiagotettamanti.doodlepropertymanagement.transaction;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -14,9 +13,15 @@ public class TransactionController {
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
-    @GetMapping ("/rent")
+    @GetMapping ("/transaction")
     public ArrayList<Transaction> getAllRents() {
         ArrayList<Transaction> transactions = transactionService.getTransactions();
         return transactions;
+    }
+
+    @PutMapping ("/transaction/{id}")
+    public Transaction updateTransaction (@RequestBody Transaction transaction, @PathVariable int id) {
+        Transaction updatedTransaction = transactionService.updateTransaction(transaction, id);
+        return updatedTransaction;
     }
 }

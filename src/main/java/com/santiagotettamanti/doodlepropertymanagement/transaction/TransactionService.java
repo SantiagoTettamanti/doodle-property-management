@@ -2,6 +2,7 @@ package com.santiagotettamanti.doodlepropertymanagement.transaction;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Service
@@ -38,5 +39,22 @@ public class TransactionService {
             }
         }
         return null;
+    }
+
+    public Transaction updateTransaction (Transaction transaction, int id) {
+        Transaction transactionToUpdate = getTransactionById(id);
+        int newPaymentAmount = transactionToUpdate.getPaymentAmount();
+        String newPaymentMethod = transactionToUpdate.getPaymentMethod();
+        LocalDate newPaymentDate = transactionToUpdate.getPaymentDate();
+        if (newPaymentAmount != 0) {
+            transactionToUpdate.setPaymentAmount(newPaymentAmount);
+        }
+        if (newPaymentMethod != null) {
+            transactionToUpdate.setPaymentMethod(newPaymentMethod);
+        }
+        if (newPaymentDate != null) {
+            transactionToUpdate.setPaymentDate(newPaymentDate);
+        }
+        return transactionToUpdate;
     }
 }
