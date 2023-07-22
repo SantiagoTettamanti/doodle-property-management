@@ -1,8 +1,7 @@
 package com.santiagotettamanti.doodlepropertymanagement.unit;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -17,5 +16,11 @@ public class UnitController {
     @GetMapping ("/unit")
     public ArrayList<Unit> getAllUnits() {
         return unitService.getUnits();
+    }
+
+    @PutMapping ("/unit/{id}")
+    public Unit updateUnit (@RequestBody Unit unit, @PathVariable int id) {
+        Unit updatedUnit = unitService.updateUnit(unit, id);
+        return updatedUnit;
     }
 }

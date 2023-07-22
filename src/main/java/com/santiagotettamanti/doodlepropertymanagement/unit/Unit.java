@@ -2,7 +2,7 @@ package com.santiagotettamanti.doodlepropertymanagement.unit;
 
 public class Unit {
     private int unitId;
-    private String floorPlanId;
+    private int floorPlanId;
     private String floorLevel;
     private int rentCost;
     private int employeeId;
@@ -18,11 +18,11 @@ public class Unit {
         this.unitId = unitId;
     }
 
-    public String getFloorPlanId() {
+    public int getFloorPlanId() {
         return floorPlanId;
     }
 
-    public void setFloorPlanId(String floorPlanId) {
+    public void setFloorPlanId(int floorPlanId) {
         this.floorPlanId = floorPlanId;
     }
 

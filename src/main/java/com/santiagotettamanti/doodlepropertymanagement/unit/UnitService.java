@@ -40,4 +40,21 @@ public class UnitService {
         }
         return null;
     }
+
+    public Unit updateUnit (Unit unit, int id) {
+        Unit unitToUpdate = getUnitById(id);
+        String newFloorLevel = unitToUpdate.getFloorLevel();
+        int newRentCost = unitToUpdate.getRentCost();
+        boolean newIsVacant = unitToUpdate.isVacant();
+        if (newFloorLevel != null) {
+            unitToUpdate.setFloorLevel(newFloorLevel);
+        }
+        if (newRentCost != 0) {
+            unitToUpdate.setRentCost(newRentCost);
+        }
+        /*if (newIsVacant != ) {
+            unitToUpdate.setVacant
+        } */
+        return unitToUpdate;
+    }
 }
