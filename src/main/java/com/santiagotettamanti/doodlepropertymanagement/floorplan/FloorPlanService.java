@@ -47,6 +47,10 @@ public class FloorPlanService {
         if (newUnitType != null) {
             floorPlanToUpdate.setUnitType(newUnitType);
         }
+        int newSquareFeet = floorPlanChanges.getSquareFeet();
+        if (newSquareFeet != 0) {
+            floorPlanToUpdate.setSquareFeet(newSquareFeet);
+        }
         return floorPlanToUpdate;
     }
 }

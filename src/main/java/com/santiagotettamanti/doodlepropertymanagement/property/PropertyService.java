@@ -3,6 +3,7 @@ package com.santiagotettamanti.doodlepropertymanagement.property;
 import com.santiagotettamanti.doodlepropertymanagement.floorplan.FloorPlan;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Service
@@ -40,9 +41,17 @@ public class PropertyService {
 
     public Property updateProperty(Property propertyChanges, int id) {
         Property propertyToUpdate = getPropertyById(id);
+        String newAddress = propertyChanges.getAddress();
+        if (newAddress != null) {
+            propertyToUpdate.setAddress(newAddress);
+        }
         int newNumberOfUnits = propertyChanges.getNumberOfUnits();
         if (newNumberOfUnits != 0) {
             propertyToUpdate.setNumberOfUnits(newNumberOfUnits);
+        }
+        LocalDate newYearBuilt = propertyChanges.getYearBuilt();
+        if (newYearBuilt != null) {
+            propertyToUpdate.setYearBuilt(newYearBuilt);
         }
         return propertyToUpdate;
     }
