@@ -1,9 +1,7 @@
 package com.santiagotettamanti.doodlepropertymanagement.floorplan;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -26,5 +24,9 @@ public class FloorPlanController {
     }
 
     @PutMapping ("/floor-plan/{id}")
+    public FloorPlan updateFloorPlan(@RequestBody FloorPlan floorPlan, @PathVariable int id) {
+        FloorPlan updatedFloorPlan = floorPlanService.updateFloorPlan(floorPlan, id);
+        return updatedFloorPlan;
+    }
 
 }
