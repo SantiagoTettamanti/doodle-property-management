@@ -8,9 +8,10 @@ import java.util.ArrayList;
 public class FloorPlanService {
     private ArrayList<FloorPlan> floorPlans = new ArrayList<>();
 
-    public boolean addFloorPlan(FloorPlan floorPlan) {
+    public FloorPlan addFloorPlan(FloorPlan floorPlan) {
+        floorPlan.setFloorPlanId(floorPlans.size() +1);
         floorPlans.add(floorPlan);
-        return true;
+        return floorPlan;
     }
 
     public ArrayList<FloorPlan> getFloorPlans() {
