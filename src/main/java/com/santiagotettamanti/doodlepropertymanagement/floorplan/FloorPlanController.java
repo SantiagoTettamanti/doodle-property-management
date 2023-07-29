@@ -1,5 +1,6 @@
 package com.santiagotettamanti.doodlepropertymanagement.floorplan;
 
+import com.santiagotettamanti.doodlepropertymanagement.employee.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,10 @@ public class FloorPlanController {
     }
 
 
-
+    @PostMapping ("/floor-plan")
+    public FloorPlan createFloorPlan(@RequestBody FloorPlan floorPlan) {
+        return floorPlanService.addFloorPlan(floorPlan);
+    }
 
     @GetMapping ("/floor-plan")
     public ArrayList<FloorPlan> getAllFloorPlans() {
