@@ -9,9 +9,10 @@ import java.util.ArrayList;
 public class TransactionService {
     private ArrayList<Transaction> transactions = new ArrayList<>();
 
-    public boolean addRent(Transaction transaction) {
+    public Transaction addTransaction(Transaction transaction) {
+        transaction.setTransactionNumber(transactions.size()+1);
         transactions.add(transaction);
-        return true;
+        return transaction;
     }
 
     public ArrayList<Transaction> getTransactions() {

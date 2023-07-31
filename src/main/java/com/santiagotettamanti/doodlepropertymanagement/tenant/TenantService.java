@@ -9,9 +9,10 @@ import java.util.ArrayList;
 public class TenantService {
     private ArrayList<Tenant> tenants = new ArrayList<>();
 
-    public boolean addTenant(Tenant tenant) {
+    public Tenant addTenant(Tenant tenant) {
+        tenant.setTenantId(tenants.size()+1);
         tenants.add(tenant);
-        return true;
+        return tenant;
     }
 
     public ArrayList<Tenant> getTenants() {

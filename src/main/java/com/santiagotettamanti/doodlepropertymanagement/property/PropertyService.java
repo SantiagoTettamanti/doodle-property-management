@@ -10,9 +10,10 @@ import java.util.ArrayList;
 public class PropertyService {
     private ArrayList<Property> properties = new ArrayList<>();
 
-    public boolean addProperty(Property property) {
+    public Property addProperty(Property property) {
+        property.setPropertyId(properties.size()+1);
         properties.add(property);
-        return true;
+        return property;
     }
 
     public ArrayList<Property> getProperties() {

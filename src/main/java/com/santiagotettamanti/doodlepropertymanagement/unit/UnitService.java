@@ -9,9 +9,10 @@ import java.util.ArrayList;
 public class UnitService {
     public ArrayList<Unit> units = new ArrayList<>();
 
-    public boolean addUnit(Unit unit) {
+    public Unit addUnit(Unit unit) {
+        unit.setUnitId(units.size()+1);
         units.add(unit);
-        return true;
+        return unit;
     }
 
     public ArrayList<Unit> getUnits() {
