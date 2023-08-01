@@ -18,6 +18,11 @@ public class UnitController {
         return unitService.getUnits();
     }
 
+    @PostMapping ("/unit")
+    public Unit createUnit(@RequestBody Unit unit) {
+        return unitService.addUnit(unit);
+    }
+
     @PutMapping ("/unit/{id}")
     public Unit updateUnit (@RequestBody Unit unit, @PathVariable int id) {
         Unit updatedUnit = unitService.updateUnit(unit, id);

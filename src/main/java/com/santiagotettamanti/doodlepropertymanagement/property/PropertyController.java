@@ -21,6 +21,11 @@ public class PropertyController {
         return properties;
     }
 
+    @PostMapping ("/property")
+    public Property createProperty(@RequestBody Property property) {
+        return propertyService.addProperty(property);
+    }
+
     @PutMapping ("/property/{id}")
     public Property updateProperty (@RequestBody Property property, @PathVariable int id) {
         Property updatedProperty = propertyService.updateProperty(property, id);

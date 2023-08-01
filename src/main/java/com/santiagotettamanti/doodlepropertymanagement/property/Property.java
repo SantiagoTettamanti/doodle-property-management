@@ -23,7 +23,7 @@ public class Property {
    }
 
    public void setAddress(String address) {
-       this.propertyId = propertyId;
+       this.address = address;
    }
 
    public int getNumberOfUnits() {

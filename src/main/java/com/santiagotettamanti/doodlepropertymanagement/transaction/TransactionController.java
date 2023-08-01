@@ -19,6 +19,11 @@ public class TransactionController {
         return transactions;
     }
 
+    @PostMapping ("/transaction")
+    public Transaction createTransaction(@RequestBody Transaction transaction){
+        return transactionService.addTransaction(transaction);
+    }
+
     @PutMapping ("/transaction/{id}")
     public Transaction updateTransaction (@RequestBody Transaction transaction, @PathVariable int id) {
         Transaction updatedTransaction = transactionService.updateTransaction(transaction, id);

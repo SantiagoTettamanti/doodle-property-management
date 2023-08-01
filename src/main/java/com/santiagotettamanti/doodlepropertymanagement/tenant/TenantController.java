@@ -18,6 +18,10 @@ public class TenantController {
         return tenantService.getTenants();
     }
 
+    @PostMapping ("/tenant")
+    public Tenant createTenant (@RequestBody Tenant tenant) {
+        return tenantService.addTenant(tenant);
+    }
     @PutMapping ("/tenant/{id}")
     public Tenant updateTenant (@RequestBody Tenant tenant, @PathVariable int id) {
         Tenant updatedTenant = tenantService.updateTenant(tenant, id);
