@@ -47,9 +47,10 @@ public class TenantService {
         String newFirstName = tenantToUpdate.getFirstName();
         String newLastName = tenantToUpdate.getLastName();
         String newEmail = tenantToUpdate.getEmail();
-        LocalDate newDateOfBirth = tenant.getDateOfBirth();
+        LocalDate newDateOfBirth = tenantToUpdate.getDateOfBirth();
         LocalDate newMoveInDate = tenantToUpdate.getMoveInDate();
         LocalDate newMoveOutDate = tenantToUpdate.getMoveOutDate();
+        int newUnitId = tenantToUpdate.getUnitId();
         if (newFirstName != null) {
             tenantToUpdate.setFirstName(newFirstName);
         }
@@ -67,6 +68,9 @@ public class TenantService {
         }
         if (newMoveOutDate != null) {
             tenantToUpdate.setMoveOutDate(newMoveOutDate);
+        }
+        if (newUnitId != 0) {
+            tenantToUpdate.setUnitId(newUnitId);
         }
         return tenantToUpdate;
     }
